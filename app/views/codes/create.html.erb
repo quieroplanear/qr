@@ -1,0 +1,7 @@
+<figure class="figure" >
+  <a href="<%= @qr.to_data_url %>" download="qrcode.png">
+    <img src="<%= @qr.to_data_url %>" class="figure-img img-fluid rounded" alt="qrcode.png" />
+  </a>
+  <figcaption class="figure-caption text-right"><code><%= @url %></code></figcaption>
+</figure>
+<a href="<%= @url %>" class="btn btn-secondary">Ver enlace</a>

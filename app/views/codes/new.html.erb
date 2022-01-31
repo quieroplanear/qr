@@ -1,0 +1,29 @@
+<div class="container">
+  <% flash.each do |key, value| %>
+    <div class="<%= flash_class(key) %>">
+      <%= value %>
+    </div>
+  <% end %>
+
+  <%= yield %>
+</div>
+<h1>Pon la dirección de la página web:</h1>
+<h3>La url tiene que empezar por <code>http://</code> o <code>https://</code>. Si no, no va a funcionar...</h3>
+<%= form_with scope: :code, url: codes_path, local: true do |form| %>
+    <div class="form-group">
+      <%= form.text_field(:url, class: "form-control", placeholder: "https://www.ejemplo.com/mas-ejemplos") %>
+      </div>   
+      <div class="form-group">
+        <div class="form-check form-check-inline">
+        <%= radio_button_tag(:logo, "with", true, class: "form-check-input") %>
+        <%= label_tag(:logo, "Con logo", class: "form-check-label") %>
+      </div>
+      <div class="form-check form-check-inline">
+        <%= radio_button_tag(:logo, "without", false, class: "form-check-input") %>
+        <%= label_tag(:logo, "Sin logo", class: "form-check-label") %>
+      </div>
+    </div>   
+    <div class="form-group">
+      <%= form.submit("Crear código QR", class: "btn btn-secondary") %>
+    </div>
+<% end %>

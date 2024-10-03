@@ -1,0 +1,30 @@
+<div class="col-md-12 justify-content-center">
+
+    <h4>Previsión de recarga</h4>
+
+    <dl class="row">
+
+        <dt class="col-sm-4">Capacidad de la batería</dt>
+        <dd class="col-sm-8"><%= @forecast.battery_capacity %></dd>
+  
+        <dt class="col-sm-4">Nivel de batería inicial</dt>
+        <dd class="col-sm-8"><%= @forecast.battery_level_at_the_beginning %>%</dd>
+
+        <dt class="col-sm-4">Nivel de batería final</dt>
+        <dd class="col-sm-8"><%= @forecast.battery_level_at_the_end %>%</dd>
+
+        <dt class="col-sm-4">Potencia media del punto de recarga</dt>
+        <dd class="col-sm-8">
+            <p><%= @forecast.power_output %> kW</p>
+            <p>Alcanzará el nivel de batería deseado en <%= @forecast.elapsed_calculated.strftime("%H:%M") %></p>
+        </dd>
+  
+        <dt class="col-sm-4">Duración de la recarga</dt>
+        <dd class="col-sm-8">
+            <p><%= @forecast.elapsed.strftime("%H:%M") %></p>
+            <p>Alcanzará el nivel de batería deseado con una potencia de <%= @forecast.power_output_calculated %> kW</p>
+        </dd>
+    
+    </dl>
+
+</div>

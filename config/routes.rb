@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
-  root 'welcome#index'
+  root 'forecasts#new'
   get 'welcome/index'
   resources :codes
   resources :forecasts

@@ -22,7 +22,7 @@ class Forecast
       self.power_output_calculated = energy_required / elapsed_decimal
       elapsed_decimal_calculated = (energy_required / power_output).round(2)
       hours_elapsed = elapsed_decimal_calculated.to_i
-      minutes_elapsed = (elapsed_decimal_calculated - hours_elapsed ) * 0.6
+      minutes_elapsed = (elapsed_decimal_calculated - hours_elapsed ) / 0.6
       self.elapsed_calculated = [hours_elapsed, minutes_elapsed, 0].join(':')
   end
 
